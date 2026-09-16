@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.shop-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f2e6dc; /* Fond beige général */
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* En-tête blanc avec le logo rond */
+.shop-header {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo-circle {
+  width: 110px;
+  height: 110px;
+  background-color: #f2e6dc;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e0d0c0;
+}
+
+.logo-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo-subtitle {
+  font-size: 0.6rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* Corps de la page (Sidebar à gauche + Grille à droite) */
+.shop-body {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Fil d'Ariane et Barre de recherche */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.search-input {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #dcd7d0;
+  width: 250px;
+  font-size: 0.9rem;
+}
+
+/* Les 3 boutons blancs à gauche */
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 220px;
+}
+
+.side-btn {
+  background-color: #ffffff;
+  border: none;
+  height: 60px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Zone principale des produits */
+.content-area {
+  flex: 1;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Carte Produit */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.product-img {
+  width: 100px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.product-desc {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.order-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  text-align: left;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.cart-top-btn {
+  background-color: #c29b61;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.cart-top-btn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,153 @@
+.mat-detail-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f1f3f5;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.mat-loading {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+.mat-detail-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.mat-detail-logo-circle {
+  width: 110px;
+  height: 110px;
+  background-color: #ced4da;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #adb5bd;
+}
+
+.mat-detail-logo-title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+.mat-detail-logo-subtitle {
+  font-size: 0.55rem;
+  color: #495057;
+  text-transform: uppercase;
+}
+
+.mat-detail-main {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+.mat-detail-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-detail-img {
+  width: 180px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.mat-detail-img-reflection {
+  width: 180px;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent);
+  transform: scaleY(-1);
+  opacity: 0.3;
+  margin-top: 5px;
+}
+
+.mat-detail-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.mat-detail-title {
+  font-size: 1.8rem;
+  color: #212529;
+}
+
+.mat-detail-brand {
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.mat-detail-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+  margin: 0.5rem 0;
+}
+
+.mat-detail-desc {
+  font-size: 0.95rem;
+  color: #495057;
+  line-height: 1.4;
+}
+
+.mat-detail-benefits h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #212529;
+}
+
+.mat-detail-benefits ul {
+  list-style: none;
+  padding: 0;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.mat-detail-benefits li {
+  margin-bottom: 0.25rem;
+}
+
+.mat-detail-add-btn {
+  background-color: #495057;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.mat-detail-add-btn:hover {
+  background-color: #343a40;
+}
+
+.mat-detail-back-btn {
+  background: linear-gradient(to right, #ced4da, #adb5bd);
+  color: #212529;
+  border: none;
+  padding: 0.9rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}

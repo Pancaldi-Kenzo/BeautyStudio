@@ -1,0 +1,130 @@
+/* Conteneur global de l'admin */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Barre latérale (Sidebar) */
+.admin-sidebar {
+  width: 260px;
+  background: linear-gradient(135deg, #c59b67 0%, #a47c48 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo / Cercle du haut */
+.admin-logo-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #f4ebd0;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.admin-logo-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.admin-logo-subtitle {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Boutons de navigation de la sidebar */
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.admin-side-btn {
+  background-color: #e2d2b5;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-side-btn:hover {
+  background-color: #d2bf9b;
+  transform: translateY(-1px);
+}
+
+.admin-side-btn.active {
+  background-color: #fff;
+  color: #8c6331;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Zone de contenu principale */
+.admin-main-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.admin-page h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 24px;
+  border-bottom: 2px solid #e2d2b5;
+  padding-bottom: 10px;
+}
+
+/* Tableaux de l'admin (ex: page Ventes) */
+.orders-table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th, .admin-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background-color: #f4ebd0;
+  color: #555;
+  font-weight: bold;
+}
+
+.admin-table tr:hover {
+  background-color: #fdfbf7;
+}
+
+.order-items-list-mini {
+  margin: 0;
+  padding-left: 15px;
+  font-size: 13px;
+  color: #555;
+}
