@@ -52,43 +52,45 @@ export default function AdminVentes() {
   })();
 
   return (
-    <div className="admin-page ventes-page">
-      <h2>Gestion des Ventes & Réassort Fournisseur</h2>
+    <div className="admin-page ventes-page container-fluid py-4">
+      <h2 className="mb-4">Gestion des Ventes & Réassort Fournisseur</h2>
       
       {/* 📦 Section Résumé Fournisseur */}
-      <div className="dashboard-box" style={{ marginTop: '20px', marginBottom: '30px', padding: '20px', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-        <h3 className="dashboard-box-title" style={{ color: '#c59b67', marginBottom: '15px' }}>
+      <div className="dashboard-box supplier-box mb-4">
+        <h3 className="dashboard-box-title supplier-box-title mb-3">
           📦 Résumé des articles à commander au fournisseur
         </h3>
 
         {loading ? (
           <p>Calcul des besoins...</p>
         ) : supplierSummary.length === 0 ? (
-          <p style={{ fontSize: '13px', color: '#666' }}>Aucun article à recommander pour le moment.</p>
+          <p className="supplier-empty-text">Aucun article à recommander pour le moment.</p>
         ) : (
-          <table className="admin-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ borderBottom: '2px solid #eee' }}>
-                <th style={{ padding: '8px' }}>Article</th>
-                <th style={{ padding: '8px' }}>Quantité Totale à Commander</th>
-              </tr>
-            </thead>
-            <tbody>
-              {supplierSummary.map((item, index) => (
-                <tr key={index} style={{ borderBottom: '1px solid #f9f9f9' }}>
-                  <td style={{ padding: '8px' }}>{item.name}</td>
-                  <td style={{ padding: '8px', fontWeight: 'bold', color: '#c59b67' }}>
-                    {item.totalQuantity} unité(s)
-                  </td>
+          <div className="supplier-table-container">
+            <table className="admin-table">
+              <thead>
+                <tr className="supplier-table-header-row">
+                  <th>Article</th>
+                  <th>Quantité Totale à Commander</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {supplierSummary.map((item, index) => (
+                  <tr key={index} className="supplier-table-body-row">
+                    <td>{item.name}</td>
+                    <td className="supplier-qty-cell">
+                      {item.totalQuantity} unité(s)
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
 
       {/* 📋 Liste des Commandes Client */}
-      <h3>Historique des Commandes</h3>
+      <h3 className="mb-3">Historique des Commandes</h3>
       {loading ? (
         <p className="ventes-loading">Chargement des ventes...</p>
       ) : orders.length === 0 ? (

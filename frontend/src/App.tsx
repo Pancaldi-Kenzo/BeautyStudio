@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Products from './pages/Product';
 import Material from './pages/Material';
@@ -10,6 +10,9 @@ import AdminVentes from './pages/admin/AdminVentes';
 import AdminLayout from './pages/admin/Adminlayout';
 import Admindashboard from './pages/admin/Admindashboard';
 import AdminStocks from './pages/admin/AdminStocks';
+import AdminParametres from './pages/admin/Adminparametres';
+import AdminLogin from './pages/admin/Adminlogin';
+import ProtectedRoute from './pages/admin/ProtectedRoute';
 
 export default function App() {
   return (
@@ -22,13 +25,22 @@ export default function App() {
         <Route path="/produit/:id" element={<ProductDetail />} />
         <Route path="/materiel/:id" element={<MaterialDetail />} />
         <Route path="/panier" element={<Cart />} />
-        {/* Routes Administrateur */}
-        <Route path="/admin/*" element={<AdminLayout />}>
-          <Route index element={<Admindashboard />} />
-          <Route path="stocks" element={<AdminStocks />} />
-          <Route path="ventes" element={<AdminVentes />} />
-          <Route path="parametres" element={<div><h2>Paramètres (À venir)</h2></div>} />
+
+        {/* Route de Connexion Admin publique */}
+        <Route path="/login" element={<AdminLogin />} />
+
+        {/* Routes Administrateur Protégées par le Layout */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/admin/*" element={<AdminLayout />}>
+            <Route index element={<Admindashboard />} />
+            <Route path="stocks" element={<AdminStocks />} />
+            <Route path="ventes" element={<AdminVentes />} />
+            <Route path="parametres" element={<AdminParametres />} />
+          </Route>
         </Route>
+
+        {/* Redirection de secours */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </CartProvider>
   );

@@ -53,3 +53,113 @@
 .admin-submit-btn:hover {
   background-color: #b08755;
 }
+/* Ajouts pour la liste et les boutons d'action dans AdminStocks.css */
+
+.admin-stocks-section {
+  margin-top: 40px;
+}
+
+.admin-stocks-section h3 {
+  color: #111;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.stocks-table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th, 
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.admin-table th {
+  background-color: #fcfcfc;
+  font-weight: bold;
+  color: #333;
+}
+
+.badge-type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-product {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.badge-material {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.btn-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit {
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-edit:hover { background-color: #ec971f; }
+.btn-delete:hover { background-color: #c9302c; }
+
+/* Classes de remplacement pour les styles inline */
+.admin-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-cancel-btn {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-cancel-btn:hover {
+  background: #5a6268;
+}
+
+.item-name-cell {
+  font-weight: 500;
+}
+
+.item-desc-cell {
+  color: #666;
+  max-width: 300px;
+}

@@ -5,6 +5,44 @@
   gap: 20px;
 }
 
+/* 📦 Section Résumé Fournisseur (Styles remplaçant le style inline) */
+.supplier-box {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.supplier-box-title {
+  color: #c59b67;
+}
+
+.supplier-empty-text {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.supplier-table-container {
+  overflow-x: auto;
+}
+
+.supplier-table-header-row {
+  border-bottom: 2px solid #eee;
+}
+
+.supplier-table-body-row {
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.supplier-qty-cell {
+  font-weight: bold;
+  color: #c59b67;
+}
+
+/* États de chargement et vides */
 .ventes-loading,
 .ventes-empty {
   color: #666;

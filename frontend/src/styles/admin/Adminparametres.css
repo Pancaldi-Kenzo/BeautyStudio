@@ -1,0 +1,156 @@
+/* src/styles/admin/AdminParametres.css */
+
+.admin-parametres-page {
+  padding: 30px;
+  background-color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.parametres-title {
+  font-size: 26px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+/* Grille pour organiser les 2 cartes (Sécurité et Codes Promo) */
+.parametres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 25px;
+}
+
+/* Style général d'une carte */
+.parametres-card {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.card-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #111;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Champs de formulaire */
+.param-field {
+  margin-bottom: 15px;
+}
+
+.param-field label {
+  display: block;
+  font-size: 15px;
+  color: #111;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.param-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* Styles spécifiques pour la gestion des codes promo */
+.promo-add-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.promo-add-row input {
+  padding: 10px 12px;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.promo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.promo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.btn-add-promo {
+  background-color: #c59b67;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-add-promo:hover {
+  background-color: #b08755;
+}
+
+.btn-delete-promo {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-delete-promo:hover {
+  background-color: #c9302c;
+}
+
+.admin-success-alert {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+}
+.btn-save-settings {
+  background-color: #c59b67 !important;
+  border: none !important;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.btn-save-settings:hover {
+  background-color: #b08755 !important;
+}

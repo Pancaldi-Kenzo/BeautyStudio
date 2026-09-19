@@ -31,7 +31,7 @@ export default function ProductDetail() {
 
         if (!hasLogged.current) {
           hasLogged.current = true;
-          axios.post('http://localhost:5000/api/consultations', {
+          axios.post('http://localhost:5000/api/admin/consultations', {
             itemId: res.data.id,
             itemName: res.data.name,
             itemType: 'product'

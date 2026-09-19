@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/useCart';
-import '../styles/MaterialDetail.css';
+import '../styles/ProductDetail.css'; // On réutilise le même style propre
 
 interface MaterialDetailType {
   id: number;
@@ -31,13 +31,12 @@ export default function MaterialDetail() {
 
         if (!hasLogged.current) {
           hasLogged.current = true;
-          axios.post('http://localhost:5000/api/consultations', {
+          axios.post('http://localhost:5000/api/admin/consultations', {
             itemId: res.data.id,
             itemName: res.data.name,
-            itemType: 'material'
-          }).catch(err => console.error("Erreur enregistrement consultation matériel :", err));
+            itemType: 'material' // Indiqué en tant que matériel
+          }).catch(err => console.error("Erreur enregistrement consultation :", err));
         }
-
       })
       .catch((err) => {
         console.error('Erreur chargement détail matériel :', err);
@@ -45,37 +44,37 @@ export default function MaterialDetail() {
       });
   }, [id]);
 
-  if (loading) return <p className="mat-loading">Chargement...</p>;
-  if (!material) return <p className="mat-loading">Matériel introuvable</p>;
+  if (loading) return <p>Chargement...</p>;
+  if (!material) return <p>Matériel introuvable</p>;
 
   const benefitsList = material.benefits 
     ? material.benefits.split('\n').filter(Boolean) 
     : [];
 
   return (
-    <div className="mat-detail-container">
-      <header className="mat-detail-header">
-        <div className="mat-detail-logo-circle">
-          <span className="mat-detail-logo-title">Beauty Studio</span>
-          <span className="mat-detail-logo-subtitle">Matériel</span>
+    <div className="detail-container">
+      <header className="detail-header">
+        <div className="detail-logo-circle">
+          <span className="detail-logo-title">Beauty Studio</span>
+          <span className="detail-logo-subtitle">Coiffure</span>
         </div>
       </header>
 
-      <div className="mat-detail-main">
-        <div className="mat-detail-image-section">
-          <img src={material.image_url} alt={material.name} className="mat-detail-img" />
-          <div className="mat-detail-img-reflection"></div>
+      <div className="detail-main">
+        <div className="detail-image-section">
+          <img src={material.image_url} alt={material.name} className="detail-img" />
+          <div className="detail-img-reflection"></div>
         </div>
 
-        <div className="mat-detail-info-section">
-          <h1 className="mat-detail-title">{material.name}</h1>
-          <h2 className="mat-detail-brand">Beauty Studio Pro</h2>
-          <span className="mat-detail-price">{material.price}€</span>
-          <p className="mat-detail-desc">{material.description}</p>
+        <div className="detail-info-section">
+          <h1 className="detail-title">{material.name}</h1>
+          <h2 className="detail-brand">Beauty Studio</h2>
+          <span className="detail-price">{material.price}€</span>
+          <p className="detail-desc">{material.description}</p>
           
           {benefitsList.length > 0 && (
-            <div className="mat-detail-benefits">
-              <h3>Caractéristiques</h3>
+            <div className="detail-benefits">
+              <h3>Bénéfices</h3>
               <ul>
                 {benefitsList.map((benefit, index) => (
                   <li key={index}>{benefit}</li>
@@ -86,16 +85,17 @@ export default function MaterialDetail() {
 
           <button 
             onClick={() => addToCart({
-              id: `mat-${material.id}`,
+              id: `mat-${material.id}`, // Format d'ID spécifique au matériel dans le panier
               name: material.name,
               price: material.price,
               image_url: material.image_url
             })}
-            className="add-to-cart-btn"
+            className="detail-add-btn"
           >
-            Ajouter au panier
+            AJOUTER
           </button>
-          <button className="mat-detail-back-btn" onClick={() => navigate(-1)}>RETOUR</button>
+          
+          <button className="detail-back-btn" onClick={() => navigate(-1)}>RETOUR</button>
         </div>
       </div>
     </div>

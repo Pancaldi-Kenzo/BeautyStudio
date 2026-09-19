@@ -49,7 +49,7 @@ export default function Products() {
 
         <div className="content-area">
           <div className="top-bar">
-            <span className="breadcrumb">Accueil &gt; Produits</span>
+            <span className="breadcrumb"></span>
             <div className="top-right-actions">
               <input type="text" placeholder="Recherche ..." className="search-input" />
               <button className="cart-top-btn" onClick={() => navigate('/panier')}>
@@ -71,7 +71,11 @@ export default function Products() {
                     className="product-img" 
                   />
                   <h3 className="product-name">{item.name}</h3>
-                  <p className="product-desc">{item.description}</p>
+                  <p className="product-desc">
+                    {item.description && item.description.length > 90 
+                      ? item.description.substring(0, 90) + '...' 
+                      : item.description}
+                  </p>
                   <span className="product-price">{item.price}€</span>
                   <button className="order-btn" onClick={() => addToCart({ ...item, id: `prod-${item.id}` })}> Commander </button>
                 </div>

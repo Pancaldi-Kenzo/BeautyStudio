@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/Material.css';
-import { useCart } from '../context/useCart'; // Import du contexte panier
+import '../styles/product.css'; // On utilise directement le même fichier CSS que les produits
+import { useCart } from '../context/useCart';
 
 interface MaterialItem {
   id: number;
@@ -31,24 +31,24 @@ export default function Material() {
   }, []);
 
   return (
-    <div className="material-container">
-      <header className="material-header">
-        <div className="material-logo-circle">
-          <span className="material-logo-title">Beauty Studio</span>
-          <span className="material-logo-subtitle">Coiffure</span>
+    <div className="shop-container">
+      <header className="shop-header">
+        <div className="logo-circle">
+          <span className="logo-title">Beauty Studio</span>
+          <span className="logo-subtitle">Coiffure</span>
         </div>
       </header>
 
-      <div className="material-body">
-        <div className="material-sidebar-buttons">
-          <button className="material-side-btn" onClick={() => navigate('/produits')}>Produits</button>
-          <button className="material-side-btn" onClick={() => navigate('/materiel')}>Matériel</button>
-          <button className="material-side-btn" onClick={() => navigate('/')}>Accueil</button>
+      <div className="shop-body">
+        <div className="sidebar-buttons">
+          <button className="side-btn" onClick={() => navigate('/produits')}>Produits</button>
+          <button className="side-btn" onClick={() => navigate('/materiel')}>Matériel</button>
+          <button className="side-btn" onClick={() => navigate('/')}>Accueil</button>
         </div>
 
-        <div className="material-content-area">
+        <div className="content-area">
           <div className="top-bar">
-            <span className="breadcrumb">Accueil &gt; Produits</span>
+            <span className="breadcrumb"></span>
             <div className="top-right-actions">
               <input type="text" placeholder="Recherche ..." className="search-input" />
               <button className="cart-top-btn" onClick={() => navigate('/panier')}>
@@ -60,14 +60,22 @@ export default function Material() {
           {loading ? (
             <p>Chargement du matériel...</p>
           ) : (
-            <div className="material-grid">
+            <div className="products-grid">
               {materials.map((item) => (
-                <div className="material-card" key={item.id}>
-                  <span className="material-info-icon" onClick={() => navigate(`/materiel/${item.id}`)} style={{ cursor: 'pointer' }}>i</span>
-                  <img src={item.image_url || 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=300&q=80'} alt={item.name} className="material-img" />
-                  <h3 className="material-name">{item.name}</h3>
-                  <p className="material-desc">{item.description}</p>
-                  <span className="material-price">{item.price}€</span>
+                <div className="product-card" key={item.id}>
+                  <span className="info-icon" onClick={() => navigate(`/materiel/${item.id}`)} style={{ cursor: 'pointer' }}>i</span>
+                  <img 
+                    src={item.image_url || 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=300&q=80'} 
+                    alt={item.name} 
+                    className="product-img" 
+                  />
+                  <h3 className="product-name">{item.name}</h3>
+                  <p className="product-desc">
+                    {item.description && item.description.length > 90 
+                      ? item.description.substring(0, 90) + '...' 
+                      : item.description}
+                  </p>
+                  <span className="product-price">{item.price}€</span>
                   <button className="order-btn" onClick={() => addToCart({ ...item, id: `mat-${item.id}` })}> Commander </button>
                 </div>
               ))}
