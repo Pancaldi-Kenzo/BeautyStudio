@@ -46,4 +46,9 @@ cd frontend
 npm install
 npm run dev
 
+Configuration de l'environnement
+PORT=
+SUPABSE_URL=
+SUPABASE_ANON_KEY=
+
 
